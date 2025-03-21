@@ -1,16 +1,17 @@
 import { describe, expect, it } from "@jest/globals";
 import checkGuess from "./guess.js";
 /*
-Funktionen tar in 2 inputs, en gissning och det korrekta ordet.
-Orden jämförs, och alla bokstäver i gissningen får ett resultat: correct, misplaced eller incorrect
-Output är en array med objekt, ett objekt för varje bokstav med dess resultat. 
-Bokstäverna är i samma ordning i outputen som i inputen
-
 Test cases:
     No letters match
     All letters are in the correct place
     One letter is in the right place, one is misplaced and the rest are incorrect
     The same letter appears twice in the guess but only once in the correct word
+
+    The first two test cases tests the basic logic of marking letters as correct and incorrect.
+    The third one tests that the function can find misplaced letters, and handle different cases for 
+    each letter.
+    The fourth test case tests that only the correctly placed letter is marked as correct in the case of 
+    the same letter appearing twice in the guess. The other is marked as incorrect.
 */ 
 
 describe("checkGuess()", () =>{
