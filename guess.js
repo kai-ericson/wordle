@@ -27,29 +27,15 @@ Add object to return-array
         }
     }
     for(let i = 0; i<guessLetters.length; i++){
-        if(guessLetters[i]){
-            
+        if(resultsArray[i].result === "incorrect"){
+            correctLetters.forEach(letter => {
+                if(guessLetters[i] == letter){
+                    resultsArray[i].result = "misplaced";
+                }
+            });
         }
+       
     }
     
     return resultsArray;
-    /*for(let i = 0; i < guessLetters.length; i++){
-        if(guessLetters[i] == correctLetters[i]){
-            result.push({letter: guessLetters[i], result: "correct"});
-            console.log(guessLetters[i]+" correct");
-        }else{
-            for(let j = 0; j < guessLetters.length; j++){
-                if(guessLetters[i] == correctLetters[j]){
-                    console.log(guessLetters[i]+" misplaced");
-                    result.push({letter: guessLetters[i], result: "misplaced"});
-                    break;
-                }
-            }
-        }
-        if(!!result.includes({letter: guessLetters[i], result: "correct"}) || !!result.includes({letter: guessLetters[i], result: "misplaced"})){
-            console.log(guessLetters[i]+" incorrect");
-            result.push({letter: guessLetters[i], result: "incorrect"});
-        }
-    }
-    return result;*/
 }
