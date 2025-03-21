@@ -6,10 +6,8 @@ export default function checkGuess(guessWord, correctWord){
         if(guessLetters[i] == correctLetters[i]){
             resultsArray.push({letter: guessLetters[i], result: "correct"});
             correctLetters[i] = "";
-            console.log(resultsArray[i]);
         }else{
             resultsArray.push({letter: guessLetters[i], result: "incorrect"});
-            console.log(resultsArray[i]);
         }
     }
     for(let i = 0; i<guessLetters.length; i++){
@@ -17,6 +15,8 @@ export default function checkGuess(guessWord, correctWord){
             correctLetters.forEach(letter => {
                 if(guessLetters[i] == letter){
                     resultsArray[i].result = "misplaced";
+                    const index = correctLetters.indexOf(letter)
+                    correctLetters[index] = "";
                 }
             });
         }
