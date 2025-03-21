@@ -12,16 +12,44 @@ Add object to return-array
  Result: misplaced}
 ]
 */
- checkGuess("cykel","cykel");
 
  export default function checkGuess(guessWord, correctWord){
     const guessLetters = guessWord.split("");
     const correctLetters = correctWord.split("");
-    const result = [];
-    for(let i = 0; i < guessLetters.length; i++){
+    const resultsArray = [];
+    for(let i = 0; i<guessLetters.length; i++){
         if(guessLetters[i] == correctLetters[i]){
-            result.push({letter: guessLetters[i], result: "correct"})
+            resultsArray.push({letter: guessLetters[i], result: "correct"});
+            console.log(resultsArray[i]);
+        }else{
+            resultsArray.push({letter: guessLetters[i], result: "incorrect"});
+            console.log(resultsArray[i]);
         }
     }
-    return result;
+    for(let i = 0; i<guessLetters.length; i++){
+        if(guessLetters[i]){
+            
+        }
+    }
+    
+    return resultsArray;
+    /*for(let i = 0; i < guessLetters.length; i++){
+        if(guessLetters[i] == correctLetters[i]){
+            result.push({letter: guessLetters[i], result: "correct"});
+            console.log(guessLetters[i]+" correct");
+        }else{
+            for(let j = 0; j < guessLetters.length; j++){
+                if(guessLetters[i] == correctLetters[j]){
+                    console.log(guessLetters[i]+" misplaced");
+                    result.push({letter: guessLetters[i], result: "misplaced"});
+                    break;
+                }
+            }
+        }
+        if(!!result.includes({letter: guessLetters[i], result: "correct"}) || !!result.includes({letter: guessLetters[i], result: "misplaced"})){
+            console.log(guessLetters[i]+" incorrect");
+            result.push({letter: guessLetters[i], result: "incorrect"});
+        }
+    }
+    return result;*/
 }
