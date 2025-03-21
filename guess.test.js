@@ -26,4 +26,8 @@ describe("checkGuess()", () =>{
     const output = checkGuess("plast", "cykel");
     expect(output).toEqual([{letter: "p", result: "incorrect"}, {letter: "l", result: "misplaced"},{letter: "a", result: "incorrect"},{letter: "s", result: "incorrect"},{letter: "t", result: "incorrect"}])
    })
+   it("returns a misplaced letter as incorrect if the same letter appears twice in the guess but once in the correct word", ()=>{
+    const output = checkGuess("hallå", "cykla");
+    expect(output).toEqual([{letter: "h", result: "incorrect"}, {letter: "a", result: "misplaced"},{letter: "l", result: "incorrect"},{letter: "l", result: "correct"},{letter: "å", result: "incorrect"}])
+   })
 })
