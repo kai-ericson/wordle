@@ -12,7 +12,16 @@ Add object to return-array
  Result: misplaced}
 ]
 */
+ checkGuess("cykel","cykel");
 
-function checkGuess(guessWord, correctWord){
-    return true;
+ export default function checkGuess(guessWord, correctWord){
+    const guessLetters = guessWord.split("");
+    const correctLetters = correctWord.split("");
+    const result = [];
+    for(let i = 0; i < guessLetters.length; i++){
+        if(guessLetters[i] == correctLetters[i]){
+            result.push({letter: guessLetters[i], result: "correct"})
+        }
+    }
+    return result;
 }
