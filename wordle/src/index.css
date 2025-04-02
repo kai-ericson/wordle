@@ -1,1 +1,64 @@
+html{
+  min-height: 100vh;
+}
+body{
+  background: linear-gradient(rgb(168, 215, 168), rgb(65, 117, 65));
+  font-family: "roboto", sans-serif;
+  color:rgb(4, 44, 4);
+  text-align: left;
+}
+h1{
+  text-align: center;
+}
+h2{
+  margin: 0rem;
+ 
+}
+.game{
+  width: 40%;
+  margin: auto;
+  padding: 1rem;
+  background-color:ivory;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+button{
+  border: none;
+  background-color: rgb(4, 86, 4);
+  color: ivory;
+  cursor: pointer;
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
 
+input{
+  background-color:ivory;
+}
+.settingsBox{
+  font-size: 0.8rem;
+  display: grid;
+  text-align: left;
+  background-color: ivory;
+  border-style: solid;
+  border-color: rgb(4, 86, 4);
+  padding: 0.5rem;
+}
+.settingsBtn{
+  margin: 0rem 0rem 0rem 0.5rem;
+  padding: 0.2rem;
+}
+
+.startBtn{
+  margin-right: 1rem;
+  padding: 0.5rem;
+  margin-left: auto;;
+  align-items: right;
+}
+.guessBtn{
+  padding:0.5rem;
+}
+.nbrLetters{
+  grid-column: 1;
+}
+.repeatLetters{
+  grid-column: 2;
+}
