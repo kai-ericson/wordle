@@ -4,16 +4,17 @@ export default function GameSettings(){
     const [number, setNumber] = useState("");
     const [isChecked, setIsChecked] = useState(false);
 
-    const handleChange = () =>{
-        
-    }
     console.log("in GameSettings");
     return (
-        <form className="settingsBox" onSubmit={(ev) =>{
+        <form className="settingsBox" onSubmit={async(ev) =>{
             ev.preventDefault();
             console.log("in onSubmit");
             console.log(number);
             console.log(isChecked);
+            const settings = [number, isChecked];
+            const url = "/api/words/:"+settings;
+            const response = await fetch(url);
+            console.log(response);
             setNumber("");
             
         }} >
