@@ -14,7 +14,10 @@ export default function GameSettings(){
             const settings = [number, isChecked];
             const url = "/api/words/:"+settings;
             const response = await fetch(url);
-            console.log(response);
+            const payload = await response.json();
+            const word = payload.data;
+            console.log("the word is: ");
+            console.log(word);
             setNumber("");
             
         }} >

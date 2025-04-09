@@ -1,6 +1,6 @@
 import fs from "fs/promises";
 import express from 'express';
-import { randomizeWords } from "./randomizeWord.js";
+import { randomizeWord } from "./randomizeWord.js";
 
 const app = express();
 
@@ -15,8 +15,12 @@ app.listen(5080);
 
 app.get("/api/words/:settings", async(req, res) =>{
     const data = [req.params.settings[1], req.params.settings[3]];
-    randomizeWords(data);
-})
+    const word = await randomizeWord(data);
+    console.log("Word in index.js: "+word);
+    res.json({
+        data: word
+});
+});
 //api call for a randomized word within the parameters (nbr words, and double letters or no)
 
 //api call sending the guessed word 
