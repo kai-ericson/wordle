@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function GameSettings(){
+export default function GameSettings({ onGetWord }){
     const [number, setNumber] = useState("");
     const [isChecked, setIsChecked] = useState(false);
 
@@ -18,6 +18,7 @@ export default function GameSettings(){
             const word = payload.data;
             console.log("the word is: ");
             console.log(word);
+            onGetWord(word);
             setNumber("");
             
         }} >

@@ -1,7 +1,9 @@
 import GameSettings from "./components/GameSettings";
-import GuessInput from "./components/GuessInput";
+import Game from "./components/Game";
+import { useState } from "react";
 
 function App() {
+ const [correctWord, setCorrectWord] = useState("");
  const items = [ 
   {
   label: "ROBOT" ,
@@ -30,8 +32,10 @@ function App() {
     <main className="app">
       <div className="game">
         <h1 className="header">WORDLE</h1>
-        <GameSettings/>
-        <GuessInput/>
+        <GameSettings onGetWord={(word) =>{
+          setCorrectWord(word);
+        }}/>
+        <Game correctWord={correctWord}/>
         <h2>Gissningar</h2>
         <ul className="guessList">
           {items.map((item) =>{
