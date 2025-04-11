@@ -62,3 +62,12 @@ input{
 .repeatLetters{
   grid-column: 2;
 }
+.misplaced{
+  background-color: rgb(253, 253, 14);
+}
+.incorrect{
+  background-color: rgb(245, 30, 30);
+}
+.correct{
+  background-color: rgb(41, 237, 41);
+}
