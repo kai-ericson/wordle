@@ -67,11 +67,8 @@ export default function Game({ correctWord }) {
             <form onSubmit={async(ev)=>{
                 ev.preventDefault();
                 console.log(name);
-                const highScore = {
-                    name: name,
-                    time: duration,
-                    guesses: items.length,
-                };
+                const highScore = [name, duration, items.length];
+                console.log(highScore);
                 const url = "api/highscore/:"+highScore;
                 const response = await fetch(url);
             }}>

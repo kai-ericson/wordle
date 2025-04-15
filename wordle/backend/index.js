@@ -21,6 +21,19 @@ app.get("/api/words/:settings", async(req, res) =>{
         data: word
 });
 });
+app.get("/api/highscore/:score", async(req,res) =>{
+    const data =req.params.score;
+    console.log(data);
+    const result = {
+        name: data[1],
+        duration: data[3],
+        guesses: data[5]
+    }
+    console.log(result.name+" "+result.duration+" "+result.guesses);
+    //const result = { data };
+    //console.log(result);
+     
+})
 //api call for a randomized word within the parameters (nbr words, and double letters or no)
 
 //api call sending the guessed word 
