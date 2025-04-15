@@ -1,5 +1,6 @@
-export default function makeGuess(guessWord, correct) {
-    let correctWord = correct.toLowerCase();
+export default function makeGuess(guess, correct) {
+    let correctWord = correct.toUpperCase();
+    let guessWord = guess.toUpperCase();
     console.log(correctWord);
     console.log("in makeGuess");
     const guessLetters = guessWord.split("");

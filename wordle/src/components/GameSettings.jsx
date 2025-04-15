@@ -22,21 +22,21 @@ export default function GameSettings({ onGetWord }){
             setNumber("");
             
         }} >
-            <h2>Spelinställningar</h2>
+            <h2>Game settings</h2>
             <div className="nbrLettersForm">
-                <p>Antal bokstäver:</p>
+                <p>Number of letters:</p>
                 <input type="number" value={number} onChange={(ev) =>{
                     setNumber(ev.target.value);
                 }}></input>
             </div>
             <div className="repeatLetters">
-                <p>Får bokstäver upprepas i ordet?</p>
+                <p>Allow repeated letters?</p>
                 <input type="checkbox" checked={isChecked} onChange={() =>{
                     setIsChecked(!isChecked);
                 }}></input>
-                <label htmlFor="repeatLettersTrue">Ja</label>
+                <label htmlFor="repeatLettersTrue">Yes</label>
             </div>
-            <button type="submit" className="startBtn" >Börja spela</button>
+            <button type="submit" className="startBtn" >Start</button>
         </form>
     );
 }

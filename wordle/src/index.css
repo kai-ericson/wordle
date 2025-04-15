@@ -56,11 +56,20 @@ input{
 .guessBtn{
   padding:0.5rem;
 }
+.check{
+  padding:1rem;
+}
 .nbrLetters{
   grid-column: 1;
 }
 .repeatLetters{
   grid-column: 2;
+}
+.hidden{
+  display: none;
+}
+.winMsg{
+  background-color: aqua;
 }
 .misplaced{
   background-color: rgb(253, 253, 14);
