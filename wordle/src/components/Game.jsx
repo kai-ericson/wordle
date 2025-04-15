@@ -2,6 +2,7 @@ import { useState } from "react";
 import makeGuess from "./guess";
 //import EndGame from "./EndGame";
 export default function Game({ correctWord }) {
+    //console.log("Settings: "+settings);
     const [startTime] = useState(new Date());
     const [gameState, setGameState] = useState("playing");
     const [endTime, setEndTime] = useState(null);
@@ -50,7 +51,6 @@ export default function Game({ correctWord }) {
                         })}</li>
                     )}
                 )}
-    
             </ul>
             </div>
         );

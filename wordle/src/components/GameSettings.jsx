@@ -18,7 +18,7 @@ export default function GameSettings({ onGetWord }){
             const word = payload.data;
             console.log("the word is: ");
             console.log(word);
-            onGetWord(word);
+            onGetWord(word, settings);
             setNumber("");
             
         }} >
