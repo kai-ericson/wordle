@@ -5,7 +5,7 @@ const scoreSchema = new mongoose.Schema({
     duration: Number,
     guesses: String,
     nbrLetters: Number,
-    repearLetters: Boolean
+    repeatLetters: Boolean
 });
 
 const Score = mongoose.model("Score", scoreSchema);

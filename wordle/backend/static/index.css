@@ -1,0 +1,12 @@
+html{
+    min-height: 100vh;
+  }
+  body{
+    background: linear-gradient(rgb(168, 215, 168), rgb(65, 117, 65));
+    font-family: "roboto", sans-serif;
+    color:rgb(4, 44, 4);
+    text-align: left;
+  }
+  h1{
+    text-align: center;
+  }

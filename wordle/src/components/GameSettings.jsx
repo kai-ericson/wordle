@@ -8,9 +8,6 @@ export default function GameSettings({ onGetWord }){
     return (
         <form className="settingsBox" onSubmit={async(ev) =>{
             ev.preventDefault();
-            console.log("in onSubmit");
-            console.log(number);
-            console.log(isChecked);
             const settings = [number, isChecked];
             const url = "/api/words/:"+settings;
             const response = await fetch(url);
@@ -19,13 +16,11 @@ export default function GameSettings({ onGetWord }){
             console.log("the word is: ");
             console.log(word);
             onGetWord(word, settings);
-            //setNumber("");
-            
         }} >
             <h2>Game settings</h2>
             <div className="nbrLettersForm">
                 <p>Number of letters:</p>
-                <input type="number" value={number} onChange={(ev) =>{
+                <input type="number" value={number} defaultValue="4"onChange={(ev) =>{
                     setNumber(ev.target.value);
                 }}></input>
             </div>

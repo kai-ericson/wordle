@@ -5,11 +5,9 @@ body{
   background: linear-gradient(rgb(168, 215, 168), rgb(65, 117, 65));
   font-family: "roboto", sans-serif;
   color:rgb(4, 44, 4);
-  text-align: left;
-}
-h1{
   text-align: center;
 }
+
 h2{
   margin: 0rem;
  
@@ -17,10 +15,15 @@ h2{
 li{
   list-style-type: none;
 }
+.app{
+  display: grid;
+  grid-template-columns: 25% 80%;
+}
 .game{
-  width: 40%;
-  margin: auto;
-  padding: 1rem;
+  width: 90%;
+  grid-column: 2;
+  margin: 1rem, auto, 1rem 1rem;
+  padding-top: 3rem;
   background-color:ivory;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
 }
@@ -38,23 +41,32 @@ input{
 }
 .settingsBox{
   font-size: 0.8rem;
-  display: grid;
+  grid-column: 1;
   text-align: left;
   background-color: ivory;
   border-style: solid;
   border-color: rgb(4, 86, 4);
+  width: auto;
   padding: 0.5rem;
+  margin: auto auto auto auto;
 }
 .settingsBtn{
   margin: 0rem 0rem 0rem 0.5rem;
-  padding: 0.2rem;
+  padding: 0.2rem auto 0,2rem 0,2rem;
+  align-self: center;
+
 }
 
 .startBtn{
+  padding: 0.2rem auto 0,2rem 0,2rem;
   margin-right: 1rem;
   padding: 0.5rem;
-  margin-left: auto;;
-  align-items: right;
+  margin-left: auto;
+  align-self: right;
+}
+
+li{
+  padding: 1rem;
 }
 .guessBtn{
   padding:0.5rem;
@@ -75,11 +87,17 @@ input{
   background-color: aqua;
 }
 .misplaced{
+  margin: 0.5rem;
+  padding: 0.5rem;
   background-color: rgb(253, 253, 14);
 }
 .incorrect{
+  margin: 0.5rem;
+  padding: 0.5rem;
   background-color: rgb(245, 30, 30);
 }
 .correct{
+  margin: 0.5rem;
+  padding: 0.5rem;
   background-color: rgb(41, 237, 41);
 }

@@ -14,12 +14,16 @@ function App() {
   return (
     <main>
       <h1 className="header">WORDLE</h1>
-      <GameSettings onGetWord={(word) =>{
-       // console.log(settings[0]+settings[1]);
+      <div className="app">
+      <GameSettings onGetWord={(word, settings) =>{
+        console.log("Settings: "+settings[0]+settings[1]);
         setCorrectWord(word);
-       // setSettings(settings);
+        setSettings(settings);
       }}/>
-      <Game correctWord={correctWord}/>
+      
+      <Game correctWord={correctWord} settings={gameSettings}/>
+      
+      </div>
     </main>
   )
 }

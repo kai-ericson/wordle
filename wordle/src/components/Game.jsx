@@ -1,23 +1,15 @@
 import { useState } from "react";
 import makeGuess from "./guess";
 //import EndGame from "./EndGame";
-export default function Game({ correctWord }) {
-    //console.log("Settings: "+settings);
+export default function Game({ correctWord, settings }) {
+    console.log("Settings( in Game.jsx): "+settings);
     const [startTime] = useState(new Date());
     const [gameState, setGameState] = useState("playing");
     const [endTime, setEndTime] = useState(null);
     const [name, setName] = useState("");
     const [guess, setGuess] = useState("");
-    const [items, setItems] = useState([ 
-        {results:
-          [{letter: "R", result: "misplaced"},
-           {letter: "O", result: "correct"},
-           {letter: "B", result: "misplaced"},
-           {letter: "O", result: "incorrect"},
-           {letter: "T", result: "misplaced"}
-          ]
-       }
-       ]);
+    const [items, setItems] = useState([]);
+
        if(gameState === "playing"){
         return(
             <div className="game">
@@ -27,7 +19,8 @@ export default function Game({ correctWord }) {
                     const results = makeGuess(guess, correctWord);
                     console.log(results);
                     setItems([...items, results]);
-                    if(guess.toLowerCase.equals(correctWord.toLowerCase)){
+                    //setGuess("");
+                    if(guess.toUpperCase() === correctWord.toUpperCase()){
                         console.log("You won!");
                         setGameState("won");
                         setEndTime(new Date());
@@ -67,7 +60,8 @@ export default function Game({ correctWord }) {
             <form onSubmit={async(ev)=>{
                 ev.preventDefault();
                 console.log(name);
-                const highScore = [name, duration, items.length];
+                console.log("Settings[1] in Game.jsx "+settings[1]);
+                const highScore = [name, duration, items.length, settings[0], settings[1]];
                 console.log(highScore);
                 const url = "api/highscore/:"+highScore;
                 const response = await fetch(url);
@@ -77,7 +71,7 @@ export default function Game({ correctWord }) {
                 <button type="submit" className="check">Done</button>
                 <button type="submit" onClick={(ev)=>{
                     setGameState("playing");
-                    setItems([{results:[]}])}}>Play again?</button>
+                    setItems([])}}>Play again?</button>
             </form>
         </div>
         );
