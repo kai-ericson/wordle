@@ -19,7 +19,7 @@ export default function GameSettings({ onGetWord }){
             console.log("the word is: ");
             console.log(word);
             onGetWord(word, settings);
-            setNumber("");
+            //setNumber("");
             
         }} >
             <h2>Game settings</h2>

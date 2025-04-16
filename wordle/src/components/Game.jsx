@@ -27,7 +27,7 @@ export default function Game({ correctWord }) {
                     const results = makeGuess(guess, correctWord);
                     console.log(results);
                     setItems([...items, results]);
-                    if(guess.toLowerCase === correctWord.toLowerCase){
+                    if(guess.toLowerCase.equals(correctWord.toLowerCase)){
                         console.log("You won!");
                         setGameState("won");
                         setEndTime(new Date());
@@ -71,13 +71,18 @@ export default function Game({ correctWord }) {
                 console.log(highScore);
                 const url = "api/highscore/:"+highScore;
                 const response = await fetch(url);
+                
             }}>
                 <input placeholder="Your name" onChange={(ev) =>{setName(ev.target.value)}}></input>
-                <button className="check">Done</button>
+                <button type="submit" className="check">Done</button>
+                <button type="submit" onClick={(ev)=>{
+                    setGameState("playing");
+                    setItems([{results:[]}])}}>Play again?</button>
             </form>
         </div>
         );
-        
        }
+
+
     
 }
