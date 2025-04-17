@@ -16,10 +16,18 @@ export async function renderHighscorePage(response, page, scores){
     const templateBuf = await fs.readFile("./backend/templates/main.html");
     const templateText = templateBuf.toString();
 
+  
     const scoreItems = scores.map((item)=>{
-        return `<li><a class="nameList">${item.name}<a> <a class=">${item.duration}s<a> <a>${item.guesses}<a> <a>${item.nbrLetters}<a> <a>${item.repeatLetters}<a><li>`
+        return `<li class="scoreItem">
+         <a class="nameList">${item.name}<a>
+         <a class="timeList">${item.duration}s<a>
+         <a class="guessesList">${item.guesses}<a>
+         <a class="nbrLettersList">${item.nbrLetters}<a>
+         <a class="repeatLettersList">${item.repeatLetters}<a>
+         <li>`
     })
-    const outputHtml = templateText.replace("=#content#=", scoreItems).replace("=#title#=", contentText);
+    const scoreText = scoreItems.join("\n");
+    const outputHtml = templateText.replace("=#content#=", scoreText).replace("=#title#=", contentText);
     response.send(outputHtml);
 
 }

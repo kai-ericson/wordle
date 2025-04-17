@@ -22,9 +22,17 @@ app.get("/info", (req, res) =>{
     renderPage(res, "info");
 })
 app.use("/assets", express.static("./dist/assets"));
-app.use("/lib", express.static("/lib"));
+//app.use("/static", express.static("./static"));
 
 app.listen(5080);
+
+app.get('/style.css', async (request, response) => {
+    const buf = await fs.readFile('./backend/style.css');
+    const css = buf.toString();
+  
+    response.setHeader('Content-Type', 'text/css');
+    response.send(css);
+  });
 
 app.get("/api/words/:settings", async(req, res) =>{
     const data = [req.params.settings[1], req.params.settings[3]];
@@ -36,8 +44,9 @@ app.get("/api/words/:settings", async(req, res) =>{
 });
 app.get("/api/highscore/:score", async(req,res) =>{
     const result =req.params.score;
-   //console.log(data);
+    console.log(result);
     const data = result.split(",");
+    console.log(data[0]);
     console.log(data);
     console.log("Data parts "+data[4]);
     /*const result = {
@@ -57,8 +66,7 @@ app.get("/api/highscore/:score", async(req,res) =>{
         repeatLetters: data[4]
     });
     await newScore.save();
-    //const result = { data };
-    //console.log(result);
+
      
 })
 //api call for a randomized word within the parameters (nbr words, and double letters or no)

@@ -1,0 +1,78 @@
+html{
+    min-height: 100vh;
+  }
+  body{
+    background: linear-gradient(rgb(168, 215, 168), rgb(65, 117, 65));
+    font-family: "roboto", sans-serif;
+    color:rgb(4, 44, 4);
+  }
+  div{
+    background-color:ivory;
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    
+    
+   /* display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;*/
+  }
+  a{
+    margin: 0.5rem;
+    text-align: center;
+  }
+  
+  h2{
+    margin: 0rem;
+  }
+  li{
+    list-style-type: none;
+    /*padding: 0.5rem;*/
+    display: flex;
+ 
+  }
+  .scoreItem{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  }
+ 
+ /*.nameList{
+    grid-column: 1;
+     
+   }
+   .timeList{
+     grid-column: 2;
+   }
+   .guessesLis{
+     grid-column: 3;
+   }
+   .nbrLettersList{
+     grid-column: 4;
+   }
+   .repeatLettersList{
+     grid-column: 5;
+   }*/
+  .nameList{
+   width: 20%;
+  /* margin-left:0;
+   margin-right:80%;*/
+    
+  }
+  .timeList{
+    width: 20%;
+   /* margin-left:20%;
+    margin-right:60%;*/
+  }
+  .guessesLis{
+    width: 20%;
+   /* margin-left:40%;
+    margin-right:40%;*/
+  }
+  .nbrLettersList{
+    width: 20%;
+   /* margin-left:60%;
+    margin-right:20%;*/
+  }
+  .repeatLettersList{
+    width: 20%;
+   /* margin-left:80%;
+    margin-right:0%;*/
+  }
