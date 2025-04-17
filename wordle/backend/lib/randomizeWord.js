@@ -17,7 +17,6 @@ export async function randomizeWord(settings){
             let letters = word.split("");
             let set = new Set();
             repeat = false;
-            
             for(let i = 0; i<letters.length; i++){
                 if(set.has(letters[i])){
                     repeat = true;

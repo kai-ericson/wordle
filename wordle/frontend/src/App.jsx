@@ -21,7 +21,6 @@ function App() {
       }}/>
       
       <Game correctWord={correctWord} settings={gameSettings}/>
-      
       </div>
     </main>
   )
