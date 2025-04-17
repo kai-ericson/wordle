@@ -18,8 +18,11 @@ app.get("/highscore", async (req, res) =>{
     const sortedScores = sortHighscore(scores);
     renderHighscorePage(res, "highscore", sortedScores);
 });
-app.get("/info", (req, res) =>{
-    renderPage(res, "info");
+app.get("/info", async (req, res) =>{
+   /* renderPage(res, "info");*/
+   const buf = await fs.readFile('./backend/info.html');
+   const html = buf.toString();
+   res.send(html);
 })
 app.use("/assets", express.static("./dist/assets"));
 //app.use("/static", express.static("./static"));
