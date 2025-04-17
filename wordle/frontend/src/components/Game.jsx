@@ -2,7 +2,6 @@ import { useState } from "react";
 import makeGuess from "./guess";
 //import EndGame from "./EndGame";
 export default function Game({ correctWord, settings }) {
-    console.log("Settings( in Game.jsx): "+settings);
     const [startTime] = useState(new Date());
     const [gameState, setGameState] = useState("playing");
     const [endTime, setEndTime] = useState(null);
@@ -15,13 +14,10 @@ export default function Game({ correctWord, settings }) {
             <div className="game">
                 <form className="guessForm" onSubmit={(ev) =>{
                     ev.preventDefault();
-                    console.log("Guess: "+guess);
                     const results = makeGuess(guess, correctWord);
-                    console.log(results);
                     setItems([...items, results]);
                     //setGuess("");
                     if(guess.toUpperCase() === correctWord.toUpperCase()){
-                        console.log("You won!");
                         setGameState("won");
                         setEndTime(new Date());
                     }
@@ -35,7 +31,6 @@ export default function Game({ correctWord, settings }) {
                 <h2>Guesses</h2>
                 <ul className="guessList">
                     {items.map((item) =>{
-                        console.log(item.results);
                         return(
                         <li className="guessItem">{item.results.map((element) =>{
                             return(
@@ -59,10 +54,7 @@ export default function Game({ correctWord, settings }) {
             <p>Add to highscore list: </p>
             <form onSubmit={async(ev)=>{
                 ev.preventDefault();
-                console.log(name);
-                console.log("Settings[1] in Game.jsx "+settings[1]);
                 const highScore = [name, duration, items.length, settings[0], settings[1]];
-                console.log(highScore);
                 const url = "api/highscore/:"+highScore;
                 const response = await fetch(url);
                 
