@@ -6,7 +6,7 @@ export default function makeGuess(guess, correct) {
     const correctLetters = correctWord.split("");
     const resultsArray = [];
     for(let i = 0; i<guessLetters.length; i++){
-      
+
         if(guessLetters[i] == correctLetters[i]){
             resultsArray.push({letter: guessLetters[i], result: "correct"});
             correctLetters[i] = "";
@@ -15,7 +15,7 @@ export default function makeGuess(guess, correct) {
         }
     }
     for(let i = 0; i<guessLetters.length; i++){
-     
+
         if(resultsArray[i].result === "incorrect"){
             correctLetters.forEach(letter => {
                 if(guessLetters[i] == letter){

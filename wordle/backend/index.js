@@ -44,7 +44,6 @@ app.get("/api/words/:settings", async(req, res) =>{
 app.get("/api/highscore/:score", async(req,res) =>{
     const result =req.params.score;
     const data = result.split(",");
-
     await mongoose.connect("mongodb://localhost:27017/highscore"); 
     const newScore = new Score({
         name: data[0],

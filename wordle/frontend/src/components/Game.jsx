@@ -16,7 +16,6 @@ export default function Game({ correctWord, settings }) {
                     ev.preventDefault();
                     const results = makeGuess(guess, correctWord);
                     setItems([...items, results]);
-                    //setGuess("");
                     if(guess.toUpperCase() === correctWord.toUpperCase()){
                         setGameState("won");
                         setEndTime(new Date());
