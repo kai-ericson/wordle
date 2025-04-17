@@ -16,7 +16,6 @@ function App() {
       <h1 className="header">WORDLE</h1>
       <div className="app">
       <GameSettings onGetWord={(word, settings) =>{
-        console.log("Settings: "+settings[0]+settings[1]);
         setCorrectWord(word);
         setSettings(settings);
       }}/>

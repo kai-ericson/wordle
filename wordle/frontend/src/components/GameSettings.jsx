@@ -4,7 +4,6 @@ export default function GameSettings({ onGetWord }){
     const [number, setNumber] = useState("");
     const [isChecked, setIsChecked] = useState(false);
 
-    console.log("in GameSettings");
     return (
         <form className="settingsBox" onSubmit={async(ev) =>{
             ev.preventDefault();
@@ -13,8 +12,6 @@ export default function GameSettings({ onGetWord }){
             const response = await fetch(url);
             const payload = await response.json();
             const word = payload.data;
-            console.log("the word is: ");
-            console.log(word);
             onGetWord(word, settings);
         }} >
             <h2>Game settings</h2>
